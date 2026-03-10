@@ -1,73 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Minecraft Legacy Console Edition (XBOX 360) for Windows Launcher</title>
 
-<link rel="icon" type="image/png" href="title.png">
+<title>Minecraft Legacy Console Edition (XBOX 360) for Windows Launcher</title>
+<link rel="icon" href="title.png">
 
 <style>
 
-@font-face {
-    font-family: Minecraft;
-    src: url("Minecraft.ttf");
+@font-face{
+font-family:Minecraft;
+src:url("Minecraft.ttf");
 }
 
 body{
-    margin:0;
-    background-image:url("systemback.jpg");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    font-family:Minecraft, sans-serif;
-    color:white;
-    text-align:center;
+margin:0;
+text-align:center;
+color:white;
+font-family:Minecraft;
+background-image:url("systemback.jpg");
+background-size:cover;
 }
 
 .banner{
-    margin-top:40px;
-}
-
-.banner img{
-    max-width:80%;
+margin-top:40px;
 }
 
 .title{
-    font-size:42px;
-    margin-top:30px;
-    text-shadow:3px 3px 6px black;
+font-size:40px;
+margin-top:20px;
+text-shadow:3px 3px 6px black;
 }
 
-.download{
-    margin-top:80px;
+.section{
+margin-top:80px;
+font-size:32px;
 }
 
-.button-container{
-    position:relative;
-    display:inline-block;
+.filebutton{
+display:block;
+margin:20px auto;
+width:520px;
+padding:20px;
+font-size:28px;
+background-image:url("btn.png");
+background-size:100% 100%;
+background-repeat:no-repeat;
+color:white;
+text-decoration:none;
+text-shadow:2px 2px 4px black;
 }
 
-.button-container img{
-    width:520px; /* bigger button */
+.filebutton:hover{
+transform:scale(1.08);
+transition:0.15s;
 }
 
-.button-text{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    font-size:42px; /* bigger text */
-    color:white;
-    text-shadow:2px 2px 4px black;
-    white-space:nowrap;
-    pointer-events:none;
-}
-
-.button-container:hover{
-    transform:scale(1.1);
-    transition:0.15s;
-}
 </style>
 </head>
 
@@ -81,15 +68,17 @@ body{
 Minecraft Legacy Console Edition (XBOX 360) for Windows Launcher
 </div>
 
-<div class="download">
-<a href="LegacyLauncher.exe" download>
-<div class="button-container">
-<img src="btn.png">
-<div class="button-text">Download Launcher</div>
+<div class="section">
+-- Latest --
 </div>
+
+<a class="filebutton" href="LegacyLauncherBETA2.exe">
+LegacyLauncherBETA2.exe
 </a>
-</div>
+
+<a class="filebutton" href="LegacyLauncherBETA1.exe">
+LegacyLauncherBETA1.exe
+</a>
 
 </body>
-
 </html>
