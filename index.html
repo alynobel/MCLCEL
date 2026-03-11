@@ -123,6 +123,42 @@ body {
     animation: fadeIn 2s ease-in;
 }
 
+.versions-list {
+    margin-top: 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    animation: fadeIn 2s ease-in;
+}
+
+.versions-list.expanded {
+    max-height: 1000px;
+}
+
+.version-item {
+    background: rgba(0, 0, 0, 0.3);
+    margin: 10px auto;
+    padding: 15px;
+    width: 600px;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.version-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    transition: all 0.15s ease;
+    text-shadow: 2px 2px 4px black;
+}
+
+.version-item a:hover {
+    color: #FFFF00;
+    transform: scale(1.05);
+    text-shadow: 2px 2px 4px black, 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -172,6 +208,23 @@ body {
         <a href="https://github.com/alynobel/MCLCEL/releases/download/mclce/LegacyLauncherBETA1.exe" class="button">
             Download Previous Version
         </a>
+        
+        <button id="showVersionsBtn" class="button" style="margin-top: 20px;">
+            Show All Versions
+        </button>
+        
+        <div id="versionsList" class="versions-list">
+            <div class="version-item">
+                <a href="https://github.com/alynobel/MCLCEL/releases/download/mclce/LegacyLauncherBETA2.exe">
+                    LegacyLauncherBETA2.exe
+                </a>
+            </div>
+            <div class="version-item">
+                <a href="https://github.com/alynobel/MCLCEL/releases/download/mclce/LegacyLauncherBETA1.exe">
+                    LegacyLauncherBETA1.exe
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -182,6 +235,16 @@ window.addEventListener('load', function() {
     if (video) {
         video.playbackRate = 1;
     }
+});
+
+// Toggle versions list
+const showVersionsBtn = document.getElementById('showVersionsBtn');
+const versionsList = document.getElementById('versionsList');
+
+showVersionsBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    versionsList.classList.toggle('expanded');
+    showVersionsBtn.textContent = versionsList.classList.contains('expanded') ? 'Hide All Versions' : 'Show All Versions';
 });
 
 // Ensure buttons work properly
